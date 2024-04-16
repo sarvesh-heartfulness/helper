@@ -5,6 +5,12 @@ app = FastAPI()
 
 @app.post("/log-request")
 async def log_request(request: Request):
+
+    # Log request headers
+    print("Request Headers:")
+    for key, value in request.headers.items():
+        print(f"{key}: {value}")
+    
     # Log query parameters
     print("Query Parameters:")
     for key, value in request.query_params.items():
